@@ -1,13 +1,17 @@
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import java.io.InputStream;
 
 
 public class ColorPicker extends Application {
@@ -21,6 +25,8 @@ public class ColorPicker extends Application {
 
         VBox vBox = new VBox();
         HBox hBox = new HBox();
+        hBox.setPadding(new Insets(25 , 25, 25, 25));
+        hBox.setSpacing(10);
         HBox hrBox = new HBox();
         HBox hgBox = new HBox();
         HBox hbBox = new HBox();
@@ -86,6 +92,8 @@ public class ColorPicker extends Application {
 
         hBox.getChildren().addAll(vrBox, vgBox, vbBox);
         vBox.getChildren().addAll(counter, hBox);
+
+        stage.getIcons().add(new Image("https://i.imgur.com/BEcP83x.jpg"));
 
         stage.setTitle("Color Picker");
         stage.setScene(new Scene(vBox));
